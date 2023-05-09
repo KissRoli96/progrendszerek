@@ -1,0 +1,26 @@
+<h1>Update User</h1>
+<form (ngSubmit)="updateUser()">
+  <div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="user.name" name="name" required>
+  </div>
+  <div>
+    <label>Email</label>
+    <input type="email" [(ngModel)]="user.email" name="email" required>
+  </div>
+  <div>
+    <label>Age</label>
+    <input type="number" [(ngModel)]="user.age" name="age" required>
+  </div>
+  <div>
+    <label>Password</label>
+    <input type="password" [(ngModel)]="user.password" name="password" required>
+  </div>
+  <div>
+    <label>Birthdate</label>
+    <input type="date" [(ngModel)]="user.birthdate" name="birthdate" required>
+  </div>
+  <button class="btn btn-secondary"  type="submit">Update</button>
+</form>
+<br>
+<button class="btn btn-secondary" routerLink="/users">Back to User List</button>

@@ -1,0 +1,23 @@
+<form (ngSubmit)="onSubmit()" #createUserForm="ngForm">
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" id="name" required [(ngModel)]="user.name" name="name">
+    </div>
+    <div class="form-group">
+      <label for="email">Email:</label>
+      <input type="email" class="form-control" id="email" required [(ngModel)]="user.email" name="email">
+    </div>
+    <div class="form-group">
+      <label for="age">Age:</label>
+      <input type="number" class="form-control" id="age" required [(ngModel)]="user.age" name="age">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input type="password" class="form-control" id="password" required [(ngModel)]="user.password" name="password">
+    </div>
+    <div class="form-group">
+      <label for="birthdate">Birthdate:</label>
+      <input type="date" class="form-control" id="birthdate" required [(ngModel)]="user.birthdate" name="birthdate">
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="createUserForm.invalid">Create User</button>
+  </form>

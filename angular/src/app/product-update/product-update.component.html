@@ -1,0 +1,18 @@
+<h1>Update Product</h1>
+<form (ngSubmit)="updateProduct()">
+  <div>
+    <label>Name</label>
+    <input type="text" [(ngModel)]="product.name" name="name" required>
+  </div>
+  <div>
+    <label>Price</label>
+    <input type="number" [(ngModel)]="product.price" name="price" required>
+  </div>
+  <div>
+    <label>Description</label>
+    <textarea [(ngModel)]="product.description" name="description" required></textarea>
+  </div>
+  <button class="btn btn-secondary"  type="submit">Update</button>
+</form>
+<br>
+<button class="btn btn-secondary" routerLink="/products">Back to Product List</button>
