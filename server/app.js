@@ -3,6 +3,7 @@ const express = require('express');
 const app = express();
 const userRoutes = require('./routes/user');
 const productRoutes = require('./routes/product');
+const path = require('path');
 
 app.use(express.json()); // JSON adatok feldolgozása 
 
@@ -26,10 +27,14 @@ app.use((req, res, next) => {
   next();
 });
 
+
+app.use(express.static(path.join(__dirname, 'public'))).set('views', path.join(__dirname, 'views')).set('view engine', 'ejs').get('/', (req, res) =>res.render('pages/index'));
+
 //routek megadás User, Product esetén
 app.use('/users', userRoutes);
 app.use('/products', productRoutes);
 
+app.use('', express.static('public'));
 
   app.listen(3000, () => {
     console.log('Server is running on port 3000');
